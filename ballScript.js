@@ -11,7 +11,7 @@ const w = {
 const ballFactory = {
     ballArray: [],
 
-    Factory(we, posX, posY)
+    Factory(we, radius, posX, posY)
     {
 
         const bodySpace = document.getElementById("main");
@@ -20,7 +20,7 @@ const ballFactory = {
         e.className = 'ball';
         e.style.top = posY;
         e.style.left = posX;
-
+        e.style.background = this.RandomColor();
         bodySpace.appendChild(e);
 
         const newBall = {
@@ -68,6 +68,13 @@ const ballFactory = {
             this.ballArray[i].Draw();
             this.ballArray[i].Move();
         }
+    },
+
+    RandomColor()
+    {
+        let color = Math.floor(Math.random() * 0xFFFFFF);
+        alert('#' + color.toString());
+        return '#' + color.toString(16);
     }
 };
 

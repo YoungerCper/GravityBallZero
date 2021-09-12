@@ -3,6 +3,20 @@ body{
     background: #444444;
 }
 
+header{
+    font-size: 14px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+
+    border: black solid 3px;
+    background: blanchedalmond;
+    padding: 10px 20px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+
 .ball{
     position: absolute;
     border: #000000 solid 2px;
@@ -10,16 +24,25 @@ body{
     height: 100px;
     top: 50px;
     left: 50px;
-    background: #ff0000;
     border-radius: 100%;
 }
 
-#newBallButton{
-    font-size: 14px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: black;
 
-    border: black solid 3px;
-    background: blanchedalmond;
-    padding: 10px;
+.headerBox{
+    flex: 1;
+}
+
+#newBallButton{
+    border: black solid 2px;
+    border-radius: 5px;
+    background: darkred;
+
+    color: darksalmon;
+    padding: 5px;
+    text-align: center;
+}
+
+#newBallButton:hover{
+    color: darkred;
+    background: red;
 }

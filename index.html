@@ -4,14 +4,30 @@
 
     <head>
         <meta charset="utf-8">
-        <title>GravityBall2</title>
+        <title>GravityBallZero</title>
         <meta charset="utf-8">
         <link href="style.css" rel="stylesheet">
     </head>
 
     <body id="main">
-        <p id="newBallButton" onclick="ballFactory.Factory(1, 10, 10);">Новый шар</p>
+
+        <header>
+            <div class="headerBox"><p>Радиус шара:</br></p><input type="text" id="radiusInput"></div>
+            <div class="headerBox"><p>Вес шара:</br></p><input type="text" id="weightInput"></div>
+            <div class="headerBox"><p>Координата Х:</br></p><input type="text" id="xInput"></div>
+            <div class="headerBox"><p>Координата Y:</br></p><input type="text" id="yInput"></div>
+            <div class="headerBox">
+                <p id="newBallButton" onclick="ballFactory.Factory(document.getElementById('weightInput').value,
+                                                                   document.getElementById('radiusInput').value,
+                                                                   document.getElementById('xInput').value,
+                                                                   document.getElementById('yInput').value);">
+                                                                   Новый шар</p>
+            </div>
+        </header>
+
+        
         <script type="text/javascript" src="ballScript.js" defer></script>
+
     </body>
 
 </html>
