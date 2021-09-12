@@ -3,35 +3,14 @@
 <html>
 
     <head>
-
+        <meta charset="utf-8">
         <title>GravityBall2</title>
         <meta charset="utf-8">
-        <style>
-
-            body{
-                background: #444444;
-            }
-
-            #ball{
-                position: absolute;
-                border: #000000 solid 2px;
-                width: 100px;
-                height: 100px;
-                top: 50px;
-                left: 50px;
-                background: #ff0000;
-                border-radius: 100%;
-            }
-
-        </style>
-
+        <link href="style.css" rel="stylesheet">
     </head>
 
-    <body>
-
-        <div id="ball"> 
-                    
-        </div>
+    <body id="main">
+        <p id="newBallButton" onclick="ballFactory.Factory(1, 10, 10);">Новый шар</p>
         <script type="text/javascript" src="ballScript.js" defer></script>
     </body>
 

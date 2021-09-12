@@ -1,0 +1,25 @@
+
+body{
+    background: #444444;
+}
+
+.ball{
+    position: absolute;
+    border: #000000 solid 2px;
+    width: 100px;
+    height: 100px;
+    top: 50px;
+    left: 50px;
+    background: #ff0000;
+    border-radius: 100%;
+}
+
+#newBallButton{
+    font-size: 14px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+
+    border: black solid 3px;
+    background: blanchedalmond;
+    padding: 10px;
+}
