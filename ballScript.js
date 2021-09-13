@@ -83,11 +83,6 @@ const ballFactory = {
     {
         let color = Math.floor(Math.random() * 0xFFFFFF);
         return '#' + color.toString(16);
-    },
-
-    Сollision(a, b)
-    {
-
     }
 };
 
