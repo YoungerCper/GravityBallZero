@@ -8,28 +8,37 @@ const w = {
     k: 0.8
 };
 
+
 const ballFactory = {
     ballArray: [],
 
-    Factory(we, radius, posX, posY)
+    Factory(We, R, posx, posy)
     {
 
         const bodySpace = document.getElementById("main");
         const e = document.createElement('div');
 
+        const we = parseInt(We, 10);
+        const r = parseInt(R, 10);
+        const posX = parseInt(posx, 10);
+        const posY = parseInt(posy, 10);
+
         e.className = 'ball';
-        e.style.top = posY;
-        e.style.left = posX;
+        e.style.top = posY + 'px';
+        e.style.left = posX + 'px';
         e.style.background = this.RandomColor();
+        e.style.width = 2 * r + 'px';
+        e.style.height = 2 * r + 'px';
         bodySpace.appendChild(e);
 
         const newBall = {
             element: e,
             weight: we,
-            xpos: 50,
-            ypos: 50,
+            xpos: posX,
+            ypos: posY,
             speedX: 0,
             speedY: 0,
+            diametr: 2 * r,
             Draw()
             {
                 this.element.style.top = this.ypos + 'px';
@@ -43,16 +52,16 @@ const ballFactory = {
                 this.ypos += this.speedY + w.gY / 2;    
                 this.speedY += w.gY;
                 this.speedX += w.gX;
-                if(this.xpos + 100 >= w.width || this.xpos <= 0)
+                if(this.xpos + this.diametr >= w.width || this.xpos <= 0)
                 { 
                     this.speedX = (this.xpos <= 0) ? Math.floor(-this.speedX * w.k) : Math.ceil(-this.speedX * w.k);
-                    this.xpos = (this.xpos <= 0) ? 0 : w.width - 100; 
+                    this.xpos = (this.xpos <= 0) ? 0 : w.width - this.diametr; 
                 }
 
-                if(this.ypos + 100 >= w.height || this.ypos <= 0)
+                if(this.ypos + this.diametr >= w.height || this.ypos <= 0)
                 {
                     this.speedY = (this.ypos <= 0) ? Math.floor(-this.speedY * w.k) : Math.ceil(-this.speedY * w.k);
-                    this.ypos = (this.ypos <= 0) ? 0 :  w.height - 100;
+                    this.ypos = (this.ypos <= 0) ? 0 :  w.height - this.diametr;
                 }        
             
             }
@@ -73,8 +82,12 @@ const ballFactory = {
     RandomColor()
     {
         let color = Math.floor(Math.random() * 0xFFFFFF);
-        alert('#' + color.toString());
         return '#' + color.toString(16);
+    },
+
+    Сollision(a, b)
+    {
+
     }
 };
 
@@ -113,6 +126,6 @@ function main()
 }
 
 document.addEventListener("keydown", KeyReader);
-ballFactory.Factory(1, 10, 10);
+ballFactory.Factory(1, 10, 10, 10);
 
 main();
